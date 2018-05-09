@@ -41,11 +41,13 @@ http://localhost:5000/home
 
 ```
 http://localhost:5000/showSampleData
+https://vast-hamlet-12361.herokuapp.com/showSampleData
 ```
 ## show sample filtered data:
 
 ```
 http://localhost:5000/filterSampleData
+https://vast-hamlet-12361.herokuapp.com/filterSampleData
 ```
 
 ## post data:
