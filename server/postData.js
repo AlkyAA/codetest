@@ -1,50 +1,22 @@
 const http = require('http');
 const request = require('request');
 const fs = require('fs');
-let postData = '';
-
-fs.readFile("hometrack-sample-request.json", 'utf8', function (err, data) {
-    // postData = JSON.parse(data);
-    postData = data;
-    console.log('read file');
+const postData = require("./hometrack-sample-request.json");
+const url = 'http://localhost:5000/';
+const options = {
+    method: 'post',
+    body: postData,
+    json: true,
+    url: url
+};
+request(options, function (err, res, body) {
+    if (err) {
+        console.error('error posting json: ', err);
+        throw err
+    }
+    const headers = res.headers;
+    const statusCode = res.statusCode;
+    console.log('headers: ', headers);
+    console.log('statusCode: ', statusCode);
+    console.log('body: ', body);
 });
-
-request.post({
-        url: 'http://localhost:5000/',
-        form: postData
-    },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body)
-        } else {
-            console.log(error)
-        }
-    });
-
-
-/*
- 
- 
- http.createServer(function (req, res) {
- fs.readFile('hometrack-post-data.json', function(err, data) {
- res.writeHead(200, {'Content-Type': 'text/html'});
- res.write(data);
- res.end();
- 
- postData = data;
- // console.log( postData );
- });
- }).listen(8080);
- 
- request.post(
- 'http://localhost:5000/',
- { json: postData },
- function (error, response, body) {
- if (!error && response.statusCode == 200) {
- console.log(body)
- } else {
- console.log(error)
- }
- }
- );
- */
