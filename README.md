@@ -30,10 +30,38 @@ or
 
 ## Documentation
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+### home page
+```
+http://localhost:5000/home
+```
 
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+# Rest API for Code Test
+
+## show sample data:
+
+```
+http://localhost:5000/showSampleData
+```
+## show sample filtered data:
+
+```
+http://localhost:5000/filterSampleData
+```
+
+## post data:
+
+```
+http://localhost:5000/
+```
+
+## show post data:
+
+```
+http://localhost:5000/showPostData
+```
+
+## show filtered post data:
+
+```
+http://localhost:5000/filteredData
+```
